@@ -302,7 +302,7 @@ bot.on('message', function (message) {
 
 function todo(message) {
 	if(message.author.id == ownerID) {
-		message.channel.send("Here is your to-do list:\n1. Finish UW Personal Statement\n2. Send ACT score and LCC transcript to UW\n3. Turn in chemistry lab\n4. Finish American Government Exam\n5. Finish chemistry exam\n6. Psychology discussion\n7. Register for Winter Quarter (Appointment Friday at 8:30)\n8. Pay fees for Winter Quarter\n9. Pay entrance fee for Phi Theta Kappa\n10. Redeem Amazon Gift Card Codes\n11. Volunteer Hours");
+		message.channel.send("Here is your to-do list:\n1. Finish UW Personal Statement\n2. Send ACT score and LCC transcript to UW\n3. Turn in chemistry lab and worksheets\n4. Psychology discussion\n5. Pay fees for Winter Quarter\n6. Pay entrance fee for Phi Theta Kappa\n7. Volunteer Hours\n8. Sign up for senior headshots in room D2\n9. Make a counseling appointment\n10. Organize Backpack");
 	}
 }
 
