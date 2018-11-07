@@ -307,7 +307,7 @@ bot.on('message', function (message) {
 
 function todo(message) {
 	if(message.author.id == ownerID) {
-		message.channel.send("Here is your to-do list:\n1. **DUE TODAY** Psychology discussion\n2. Finish UW Personal Statement\n3. Send ACT score and LCC transcript to UW, and pay application fee\n4. Pay fees for Winter Quarter\n5. Pay entrance fee for Phi Theta Kappa\n6. Volunteer Hours\n7. Finish Chemistry Worksheets\n8. Finish Chemistry Prelab\n9. Psychology Test\n10. Apply for Google Internship");
+		message.channel.send("Here is your to-do list:\n1. Finish UW Personal Statement\n2. Send ACT score and LCC transcript to UW, and pay application fee\n3. Pay fees for Winter Quarter\n4. Pay entrance fee for Phi Theta Kappa\n5. Volunteer Hours\n6. Finish Chemistry Worksheets\n7. Finish Chemistry Prelab\n8. Psychology Test\n9. Do laundry\n10. Apply for Google Internship");
 	}
 }
 
