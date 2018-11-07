@@ -1,4 +1,5 @@
 var initializer = require("./init.js");
+var haveHugged = false;
 initializer.init();
 console.log("Global variables established, logging in");
 
@@ -129,6 +130,10 @@ bot.on("guildMemberAdd", async function (member) {
 });
 
 bot.on('message', function (message) {
+	if(message.channel.id == "502576172711018497" && !haveHugged) {
+		haveHugged = true;
+		message.channel.send("*huggles!* :3");
+	}
 	if(!message.author.bot && (message.content.startsWith("<@" + selfID + ">") || message.content.startsWith("<@!" + selfID + ">"))) {
 		chatbot(message);
 	}
