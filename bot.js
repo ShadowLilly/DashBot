@@ -302,7 +302,7 @@ bot.on('message', function (message) {
 
 function todo(message) {
 	if(message.author.id == ownerID) {
-		message.channel.send("Here is your to-do list:\n1. Pay fees for Winter Quarter (Dec 31)\n2. Volunteer Hours\n3. Complete chemistry lab report (Wednesday)\n4. Do laundry\n5. Apply for Google Internship (Not yet available)\n6. Scholarships\n7. Psychology Exam (19th)");
+		message.channel.send("Here is your to-do list:\n1. Pay fees for Winter Quarter (Dec 31)\n2. 20 Volunteer Hours (Feb 6)\n3. Volunteer Thank You Note (Feb 6)\n4. High School and Beyond Plan (Feb 6)\n5. Exit Interview (Feb 13 or Feb 20)\n6. Complete chemistry lab report (Nov 14)\n7. Complete Chemistry Prelab (Nov 14)\n8. Fold laundry (Nov 14)\n9. Apply for Google Internship (Not yet available)\n10. Scholarships ($30,000 remaining)\n11. Psychology Exam (Nov 19)");
 	}
 }
 
