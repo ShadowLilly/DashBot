@@ -204,6 +204,10 @@ bot.on('message', function (message) {
 			case "earn":
 				earn(message);
 				break;
+				
+			case "hug":
+				hug(message);
+				break;
 					
 			case "queue":
 				queue(message);	
@@ -1085,6 +1089,26 @@ function boop(message) {
 		else {
 			message.channel.send(message.content.split(" ")[1] + " has been booped! *boop*", {
 				files: [{attachment: "./images/boop.gif", name: "boop.gif"}]
+			});
+		}
+	}
+};
+
+function hug(message) {
+	if(message.content.substring(message.content.indexOf(" ") + 1).indexOf(" ") != -1) {
+		message.channel.send("GROUP HUGS!!!!!", {
+			files: [{attachment: "./images/hug.gif", name: "hug.gif"}]
+		});
+	}
+	else{
+		if(message.content.indexOf(" ") == -1) {
+			message.channel.send("Awww... does someone need a hug? :3", {
+				files: [{attachment: "./images/hug.gif", name: "hug.gif"}]
+			});
+		}
+		else {
+			message.channel.send(message.content.split(" ")[1] + " recieves huggles! *squee* :3", {
+				files: [{attachment: "./images/hug.gif", name: "hug.gif"}]
 			});
 		}
 	}
