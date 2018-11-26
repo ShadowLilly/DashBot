@@ -53,6 +53,7 @@
 			]},
 			{category: "Reactions", description: "I react to your stupidity : D", commands: [
 				{command: "boop [person]", description: "Boop a Snoot! :3"},
+				{command: "hug [person]", description: "HUG PILE!!!! :3"},
 				{command: "bap [person]", description: "Bap someone! :french_bread:"},
 				{command: "shootlasers", description: "Pew pew pew"},
 				{command: "insult [person]", description: "Insult someone >:3"},
