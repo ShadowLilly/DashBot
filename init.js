@@ -1,6 +1,7 @@
 ﻿module.exports = {
 	init: function () {
 		global.lastRiskyAction = null;
+		global.alertSentToday = false;
 		global.Discord = require('./dependencies/discord.js');
 		global.pg = require("./dependencies/pg");
 		global.database = new pg.Pool({
