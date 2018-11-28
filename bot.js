@@ -226,7 +226,8 @@ bot.on('message', function (message) {
 				break;
 				
 			case "time":
-				message.channel.send(new Date(Date.now()));
+				var x = new Date(Date.now());
+				message.channel.send(x);
 				break;
 				
 			case "greyscale":
