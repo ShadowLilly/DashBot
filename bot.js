@@ -306,7 +306,7 @@ bot.on('message', function (message) {
 
 function todo(message) {
 	if(message.author.id == ownerID) {
-		message.channel.send("Here is your to-do list:\n1. Pay fees for Winter Quarter (Dec 31)\n2. 20 Volunteer Hours (Feb 6)\n3. Volunteer Thank You Note (Feb 6)\n4. High School and Beyond Plan (Feb 6)\n5. Exit Interview (Feb 13 or Feb 20)\n7. Apply for Google Internship (Not yet available)\n8. Scholarships ($30,000 remaining)\n9. Mr. Coffee Lab Report (Due Nov 28)\n10. Chemistry Worksheet (Due Nov 26)\n11. Chemistry Exam (Due Nov 30)\n12. American Government Exam (Due Nov 28)\n13. American Government Exam (Due Dec 5)\n14. Psychology Disccusion - 3 days remaining (Due Dec 6)");
+		message.channel.send("Here is your to-do list:\n1. Pay fees for Winter Quarter (Dec 31)\n2. 20 Volunteer Hours (Feb 6)\n3. Volunteer Thank You Note (Feb 6)\n4. High School and Beyond Plan (Feb 6)\n5. Exit Interview (Feb 13 or Feb 20)\n7. Apply for Google Internship (Not yet available)\n8. Scholarships ($30,000 remaining)\n9. Mr. Coffee Lab Report (Due Nov 28)\n10. Chemistry Exam (Due Nov 30)\n11. American Government Exam (Due Nov 28)\n12. American Government Exam (Due Dec 5)\n13. Psychology Disccusion - 3 days remaining (Due Dec 6)");
 	}
 }
 
