@@ -18,7 +18,7 @@ bot.on('ready',async function (evt) {
 	});
 	setInterval(function() {
 		var currentTime = time();
-		if(!alertSentToday && time[0] > 22) {
+		if(!alertSentToday && currentTime[0] > 22) {
 			bot.fetchUser("353849640640315392").then(function(user) {
 				user.send("This is a test!");
 			});
@@ -30,7 +30,7 @@ bot.on('ready',async function (evt) {
 		else if(time[0] < 22) {
 			alertSentToday = false;
 		}
-	}, 60000);
+	}, 15000);
 });
 
 var security = require("./security.js");
