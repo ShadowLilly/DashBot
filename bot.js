@@ -15,7 +15,22 @@ bot.on('ready',async function (evt) {
 	}).catch(function(err) {
 		console.log(err);
 		console.log("Could not set presence");
-	});		
+	});
+	setInterval(function() {
+		var currentTime = time();
+		if(!alertSentToday && time[0] > 22) {
+			bot.fetchUser("353849640640315392").then(function(user) {
+				user.send("This is a test!");
+			});
+			bot.fetchUser("385905131063083008").then(function(user) {
+				user.send("This is a test!");
+			});
+			alertSentToday = true;
+		}
+		else if(time[0] < 22) {
+			alertSentToday = false;
+		}
+	}, 60000);
 });
 
 var security = require("./security.js");
@@ -225,20 +240,6 @@ bot.on('message', function (message) {
 				lockdown(message);
 				break;
 				
-			case "time":
-				var x = new Date(Date.now());
-				x = x.toGMTString();
-				x = x.substring(x.indexOf("201") + 5, x.indexOf("201") + 13);
-				var y = x.split(":");
-				y[0] = new Number(y[0]) + 2;
-				y[1] = new Number(y[1]) + 0;
-				y[2] = new Number(y[2]) + 0;
-				if(y[0] > 24) {
-					y[0] -= 24;
-				}
-				message.channel.send("The time is " + y[0] + ":" + y[1] + ":" + y[2]);
-				break;
-				
 			case "greyscale":
 				greyscale(message);
 				break;
@@ -317,6 +318,20 @@ bot.on('message', function (message) {
 		}
 	}
 });
+
+function time() {
+	var x = new Date(Date.now());
+	x = x.toGMTString();
+	x = x.substring(x.indexOf("201") + 5, x.indexOf("201") + 13);
+	var y = x.split(":");
+	y[0] = new Number(y[0]) + 2;
+	y[1] = new Number(y[1]) + 0;
+	y[2] = new Number(y[2]) + 0;
+	if(y[0] > 24) {
+		y[0] -= 24;
+	}
+	return y;
+}
 
 function todo(message) {
 	if(message.author.id == ownerID) {
