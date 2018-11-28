@@ -227,7 +227,7 @@ bot.on('message', function (message) {
 				
 			case "time":
 				var x = new Date(Date.now());
-				message.channel.send(x);
+				message.channel.send(x.toGMTString());
 				break;
 				
 			case "greyscale":
