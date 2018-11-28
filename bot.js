@@ -227,7 +227,16 @@ bot.on('message', function (message) {
 				
 			case "time":
 				var x = new Date(Date.now());
-				message.channel.send(x.toGMTString());
+				x = x.toGMTString();
+				x = x.substring(x.indexOf("201") + 5, x.indexOf("201") + 13);
+				var y = x.split(":");
+				y[0] = new Number(y[0]) + 2;
+				y[1] = new Number(y[1]) + 0;
+				y[2] = new Number(y[2]) + 0;
+				if(y[0] > 24) {
+					y[0] -= 24;
+				}
+				message.channel.send("The time is " + y[0] + ":" + y[1] + ":" + y[2]);
 				break;
 				
 			case "greyscale":
