@@ -18,12 +18,12 @@ bot.on('ready',async function (evt) {
 	});
 	setInterval(function() {
 		var currentTime = time();
-		if(!alertSentToday && currentTime[0] > 22) {
+		if(!alertSentToday && currentTime[0] > 22 && currentTime[1] > 44) {
 			bot.fetchUser("353849640640315392").then(function(user) {
-				user.send("This is a test!");
+				user.send("Time to sleep now :3");
 			});
 			bot.fetchUser("385905131063083008").then(function(user) {
-				user.send("This is a test!");
+				user.send("Time for Cel to sleep");
 			});
 			alertSentToday = true;
 		}
