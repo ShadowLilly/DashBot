@@ -18,7 +18,7 @@ bot.on('ready',async function (evt) {
 	});
 	setInterval(function() {
 		var currentTime = time();
-		if(!alertSentToday && currentTime[0] > 22 && currentTime[1] > 44) {
+		if(!alertSentToday && currentTime[0] > 21 && currentTime[1] > 44) {
 			bot.fetchUser("353849640640315392").then(function(user) {
 				user.send("Time to sleep now :3");
 			});
