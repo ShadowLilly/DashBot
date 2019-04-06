@@ -21,7 +21,9 @@ bot.on('ready',async function (evt) {
 		var currentTime = time();
 		if(!medsSentToday && currentTime[0] > 11) {
 			bot.fetchUser("353849640640315392").then(function(user) {
-				user.send(new Attachment("images/7562D3E5-0ADA-4CAE-9867-61FF528A657B.jpeg"));
+				user.send({
+					files: [{attachment: "images/7562D3E5-0ADA-4CAE-9867-61FF528A657B.jpeg", name: "meds.jpg"}]
+				});
 			});
 			medsSentToday = true;
 		}
