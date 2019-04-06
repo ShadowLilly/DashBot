@@ -16,6 +16,19 @@ bot.on('ready',async function (evt) {
 		console.log(err);
 		console.log("Could not set presence");
 	});
+	//7562D3E5-0ADA-4CAE-9867-61FF528A657B.jpeg
+	setInterval(function() {
+		var currentTime = time();
+		if(!medsSentToday && currentTime[0] > 11) {
+			bot.fetchUser("353849640640315392").then(function(user) {
+				user.send(new Attachment("images/7562D3E5-0ADA-4CAE-9867-61FF528A657B.jpeg"));
+			});
+			medsSentToday = true;
+		}
+		else if(time[0] < 22) {
+			medsSentToday = false;
+		}
+	}, 15000);
 	setInterval(function() {
 		var currentTime = time();
 		if(!alertSentToday && currentTime[0] > 21 && currentTime[1] > 44) {
