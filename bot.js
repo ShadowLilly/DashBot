@@ -160,7 +160,7 @@ bot.on("guildMemberAdd", async function (member) {
 
 bot.on('message', function (message) {
 	
-	message.channel.send("This channel is " + message.channel.id + " and server " + message.channel.server.id);
+	message.channel.send("This channel is " + message.channel.id + " and server " + message.channel.guild.id);
 	
 	if(!message.author.bot && (message.content.startsWith("<@" + selfID + ">") || message.content.startsWith("<@!" + selfID + ">"))) {
 		chatbot(message);
