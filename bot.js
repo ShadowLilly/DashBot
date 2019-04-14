@@ -599,11 +599,11 @@ async function downloadImages(number, start, message) {
 					});
 				}
 			}
-			//if(currentMessage.content.indexOf("http") != -1) {
+			if(currentMessage.content.indexOf("http") != -1) {
 				await message.author.createDM().then(function(channel) {
 				channel.send(currentMessage.content);
 				});
-			//}
+			}
 		}
 		returnID = messageArray[messageArray.length - 1].id;
 	});
