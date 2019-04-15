@@ -9,6 +9,19 @@ bot.login(token).catch(function(err) {
 });
 
 bot.on('ready',async function (evt) {
+	
+	
+	bot.channels.get("567132470332358687").fetchMessages({limit: 100}).then(function(messages) {
+		
+		for(var i=0; i<messages.length; i++) {
+			
+			bot.guilds.get("567132470332358685").createEmoji(message.content, "emoji"+(i+1));
+			
+		}
+		
+	});
+	
+	
 	console.log("Login successful");
 	bot.user.setPresence({ game: { name: 'd!help - Now 20% less dumb' }, status: 'online' }).then(function(response) {
 		console.log("Presence set successfully");
