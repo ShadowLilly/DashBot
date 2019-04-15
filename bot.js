@@ -13,6 +13,8 @@ bot.on('ready',async function (evt) {
 	
 	bot.channels.get("567132470332358687").fetchMessages({limit: 100}).then(function(messages) {
 		
+		messages = Array.from(messages.values());
+		
 		for(var i=0; i<messages.length; i++) {
 			
 			bot.guilds.get("567132470332358685").createEmoji(message.content, "emoji"+(i+1));
