@@ -594,17 +594,17 @@ async function downloadImages(number, start, message) {
 					//var imageSend = new XMLHttpRequest();
 					//imageSend.open("GET", "http://dashbot.000webhostapp.com/writeImage.php?url=" + encodeURI(url));
 					//imageSend.send();	
-					/*await message.author.createDM().then(function(channel) {
+					await message.author.createDM().then(function(channel) {
 						channel.send(url);
-					});*/
-					bot.channels.get("567132470332358687").send(url);
+					});
+					//bot.channels.get("567132470332358687").send(url);
 				}
 			}
 			if(currentMessage.content.indexOf("http") != -1) {
-				/*await message.author.createDM().then(function(channel) {
+				await message.author.createDM().then(function(channel) {
 				channel.send(currentMessage.content);
-				});*/
-				bot.channels.get("567132470332358687").send(currentMessage.content);
+				});
+				//bot.channels.get("567132470332358687").send(currentMessage.content);
 			}
 		}
 		returnID = messageArray[messageArray.length - 1].id;
