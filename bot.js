@@ -11,7 +11,7 @@ bot.login(token).catch(function(err) {
 bot.on('ready',async function (evt) {
 	
 	
-	bot.channels.get("567132470332358687").fetchMessages({limit: 100}).then(function(messages) {
+	/*bot.channels.get("567132470332358687").fetchMessages({limit: 100}).then(function(messages) {
 		
 		messages = Array.from(messages.values());
 		
@@ -21,7 +21,7 @@ bot.on('ready',async function (evt) {
 			
 		}
 		
-	});
+	});*/
 	
 	
 	console.log("Login successful");
