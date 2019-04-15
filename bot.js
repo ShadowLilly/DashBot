@@ -597,7 +597,7 @@ async function downloadImages(number, start, message) {
 					/*await message.author.createDM().then(function(channel) {
 						channel.send(url);
 					});*/
-					bot.channels.find(val => val.id=="567132470332358687").then(function(channel){
+					bot.channels.get("567132470332358687").then(function(channel){
 						channel.send(url);
 					});
 				}
@@ -606,7 +606,7 @@ async function downloadImages(number, start, message) {
 				/*await message.author.createDM().then(function(channel) {
 				channel.send(currentMessage.content);
 				});*/
-				bot.channels.find(val => val.id=="567132470332358687").then(function(channel){
+				bot.channels.get("567132470332358687").then(function(channel){
 						channel.send(currentMessage.content);
 					});
 			}
