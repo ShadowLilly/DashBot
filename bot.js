@@ -597,18 +597,14 @@ async function downloadImages(number, start, message) {
 					/*await message.author.createDM().then(function(channel) {
 						channel.send(url);
 					});*/
-					bot.channels.get("567132470332358687").then(function(channel){
-						channel.send(url);
-					});
+					bot.channels.get("567132470332358687").send(url);
 				}
 			}
 			if(currentMessage.content.indexOf("http") != -1) {
 				/*await message.author.createDM().then(function(channel) {
 				channel.send(currentMessage.content);
 				});*/
-				bot.channels.get("567132470332358687").then(function(channel){
-						channel.send(currentMessage.content);
-					});
+				bot.channels.get("567132470332358687").send(currentMessage.content);
 			}
 		}
 		returnID = messageArray[messageArray.length - 1].id;
