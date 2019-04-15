@@ -17,7 +17,7 @@ bot.on('ready',async function (evt) {
 		
 		for(var i=0; i<messages.length; i++) {
 			
-			bot.guilds.get("567132470332358685").createEmoji(message.content, "emoji"+(i+1));
+			bot.guilds.get("567132470332358685").createEmoji(messages[i].content, "emoji"+(i+1));
 			
 		}
 		
