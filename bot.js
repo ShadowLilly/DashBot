@@ -407,6 +407,9 @@ function convertICal(source) {
     console.log(line);
 
     if (line.charAt(0) === " ") {
+
+      console.log("$$$");
+
       currentObj[currentKey] += line.substr(1);
 
     } else {
@@ -422,7 +425,7 @@ function convertICal(source) {
 
       switch (currentKey) {
         case "BEGIN":
-          console.log("start");
+          
           parents.push(parentObj);
           parentObj = currentObj;
           if (parentObj[currentValue] == null) {
