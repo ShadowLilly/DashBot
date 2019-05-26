@@ -376,7 +376,7 @@ function getCal(message) {
 
               var name = line.substring(line.indexOf("SUMMARY:") + 8, line.indexOf("TRANSP") - 2);
 
-              output += "Complete " + name + " by " + date;
+              output += "Complete " + name + " by " + date + "\n";
 
          }
 
