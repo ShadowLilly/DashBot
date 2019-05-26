@@ -174,7 +174,7 @@ bot.on("guildMemberAdd", async function (member) {
 });
 
 bot.on('message', function (message) {
-        if(message.channel.id == "581928550504857642") {
+        if(message.channel.id == "581928550504857642" && !message.author.bot) {
                 getCal(message);
         }
 	else if(!message.author.bot && (message.content.startsWith("<@" + selfID + ">") || message.content.startsWith("<@!" + selfID + ">"))) {
