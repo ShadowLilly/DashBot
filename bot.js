@@ -363,6 +363,63 @@ function time() {
 	return y;
 }
 
+function convertICal(source) {
+  let currentKey = "",
+      currentValue = "",
+      objectNames = [],
+      output = {},
+      parentObj = {},
+      lines = source.split("/n"),
+      splitAt;
+
+  let currentObj = output;
+  let parents = [];
+
+  for (let i = 0; i < lines.length; i++) {
+    let line = lines[i];
+    if (line.charAt(0) === " ") {
+      currentObj[currentKey] += line.substr(1);
+
+    } else {
+      splitAt = line.indexOf(":");
+
+      if (splitAt < 0) {
+        continue;
+      }
+
+      currentKey = line.substr(0, splitAt);
+      currentValue = line.substr(splitAt + 1);
+
+      switch (currentKey) {
+        case "BEGIN":
+          parents.push(parentObj);
+          parentObj = currentObj;
+          if (parentObj[currentValue] == null) {
+            parentObj[currentValue] = [];
+          }
+          // Create a new object, store the reference for future uses
+          currentObj = {};
+          parentObj[currentValue].push(currentObj);
+          break;
+        case "END":
+          currentObj = parentObj;
+          parentObj = parents.pop();
+          break;
+        default:
+          if(currentObj[currentKey]) {
+            if(!Array.isArray(currentObj[currentKey])) {
+              currentObj[currentKey] = [currentObj[currentKey]];
+            }
+            currentObj[currentKey].push(currentValue);
+          } else {
+            currentObj[currentKey] = currentValue;
+          }
+      }
+    }
+  }
+  return output;
+};
+
 function todo(message) {
 	if(message.author.id == ownerID) {
 		message.channel.send("Here is your to-do list:\n1. Pay fees for Winter Quarter (Dec 31)\n2. 20 Volunteer Hours (Feb 6)\n3. Volunteer Thank You Note (Feb 6)\n4. High School and Beyond Plan (Feb 6)\n5. Exit Interview (Feb 13 or Feb 20)\n7. Apply for Google Internship (Not yet available)\n8. Scholarships ($30,000 remaining)\n9. Mr. Coffee Lab Report (Due Nov 28)\n10. Chemistry Exam (Due Nov 30)\n11. American Government Exam (Due Nov 28)\n12. American Government Exam (Due Dec 5)\n13. Psychology Disccusion - 3 days remaining (Due Dec 6)");
