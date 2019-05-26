@@ -414,7 +414,7 @@ function convertICal(source) {
 
     } else {
 
-      console.log(line.indexOf(":"));
+      console.log("a");
 
       splitAt = line.indexOf(":");
 
