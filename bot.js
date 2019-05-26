@@ -445,6 +445,10 @@ function convertICal(source) {
       }
     }
   }
+
+  console.log(output);
+  console.log(currentObj);
+
   return output;
 };
 
