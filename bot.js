@@ -362,7 +362,7 @@ function getCal(message) {
 
     else if(response.statusCode == 200) {
 
-         message.channel.send(body);
+         message.channel.send(convertICal(body));
 
     }
 
