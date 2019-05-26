@@ -372,9 +372,9 @@ function getCal(message) {
 
               var line = dataArray[i];
 
-              var date = line.substring(20, 28);
+              var date = line.substring(21, 29);
 
-              var name = line.substring(line.indexOf("SUMMARY:") + 8, line.indexOf("TRANSP") - 1);
+              var name = line.substring(line.indexOf("SUMMARY:") + 8, line.indexOf("TRANSP") - 2);
 
               output += "Complete " + name + " by " + date;
 
