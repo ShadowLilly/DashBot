@@ -413,9 +413,10 @@ function convertICal(source) {
       currentObj[currentKey] += line.substr(1);
 
     } else {
-      splitAt = line.indexOf(":");
 
-      console.log("k");
+      console.log(line.indexOf(":"));
+
+      splitAt = line.indexOf(":");
 
 
       if (splitAt < 0) {
