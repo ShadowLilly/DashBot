@@ -405,13 +405,14 @@ function convertICal(source) {
 
   for (let i = 0; i < lines.length; i++) {
     let line = lines[i];
+
+    console.log(line);
+
     if (line.charAt(0) === " ") {
       currentObj[currentKey] += line.substr(1);
 
     } else {
       splitAt = line.indexOf(":");
-
-      console.log(splitAt);
 
 
       if (splitAt < 0) {
