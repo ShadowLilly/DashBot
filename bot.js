@@ -398,13 +398,11 @@ function convertICal(source) {
       lines = source.split("\r"),
       splitAt;
 
-  console.log(lines);
-
   let currentObj = output;
   let parents = [];
 
-  for (let i = 0; i < lines.length; i++) {
-    let line = lines[i];
+  for (var i = 0; i < lines.length; i++) {
+    var line = lines[i];
 
     console.log(line);
 
