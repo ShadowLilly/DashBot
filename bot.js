@@ -174,7 +174,10 @@ bot.on("guildMemberAdd", async function (member) {
 });
 
 bot.on('message', function (message) {
-	if(!message.author.bot && (message.content.startsWith("<@" + selfID + ">") || message.content.startsWith("<@!" + selfID + ">"))) {
+        if(message.channel.id == "581928550504857642") {
+                getCal(message);
+        }
+	else if(!message.author.bot && (message.content.startsWith("<@" + selfID + ">") || message.content.startsWith("<@!" + selfID + ">"))) {
 		chatbot(message);
 	}
 	else if(message.content.substring(0, 3) == "I'm" && !message.author.bot) {
@@ -348,6 +351,10 @@ bot.on('message', function (message) {
 		}
 	}
 });
+
+function getCal(message) {
+
+}
 
 function time() {
 	var x = new Date(Date.now());
