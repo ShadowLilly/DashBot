@@ -415,7 +415,7 @@ function convertICal(source) {
     } else {
       splitAt = line.indexOf(":");
 
-      console.log(splitAt);
+      console.log("k");
 
 
       if (splitAt < 0) {
