@@ -354,6 +354,21 @@ bot.on('message', function (message) {
 
 function getCal(message) {
 
+    request("https://calendar.google.com/calendar/ical/c18bjkhmkvgfj9h7akvfjm2mao%40group.calendar.google.com/private-2f08e85d49f96c96c8940da88fa2c416/basic.ics", function(err, response, body) {
+
+    if(err) {
+
+    }
+
+    else if(response.statusCode == 200) {
+
+         message.channel.send(convertICal(body));
+
+    }
+
+
+    });
+
 }
 
 function time() {
