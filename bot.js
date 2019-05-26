@@ -364,9 +364,23 @@ function getCal(message) {
 
          var ICal = body;
 
-         var JSON = convertICal(body);
+         var dataArray = ICal.split("BEGIN:VEVENT");
 
-         message.channel.send(JSON);
+         var output = "";
+
+         for(var i = 0; i < dataArray.length; i++) {
+
+              var line = dataArray[i];
+
+              var date = line.substring(line.indexOf("DTSTART;VALUE=DATE:") + 1, 8);
+
+              var name = line.substring(line.indexOf("SUMMARY:") + 8, line.substring(line.indexOf("SUMMARY:") + 8, line.indexOf("TRANSP:") + 8).length);
+
+              output += "Complete " + name + " by " + date;
+
+         }
+
+         message.channel.send(output);
 
     }
 
