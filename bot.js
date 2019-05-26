@@ -404,7 +404,7 @@ function convertICal(source) {
   for (var i = 0; i < lines.length; i++) {
     var line = lines[i];
 
-    console.log("A");
+    console.log(line.charAt(0));
 
     if (line.charAt(0) === " ") {
 
