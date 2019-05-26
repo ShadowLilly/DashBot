@@ -368,13 +368,13 @@ function getCal(message) {
 
          var output = "";
 
-         for(var i = 0; i < dataArray.length; i++) {
+         for(var i = 1; i < dataArray.length; i++) {
 
               var line = dataArray[i];
 
-              var date = line.substring(line.indexOf("DTSTART;VALUE=DATE:") + 1, 8);
+              var date = line.substring(20, 28);
 
-              var name = line.substring(line.indexOf("SUMMARY:") + 8, line.substring(line.indexOf("SUMMARY:") + 8, line.indexOf("TRANSP:") + 8).length);
+              var name = line.substring(line.indexOf("SUMMARY:") + 8, line.indexOf("TRANSP") - 1);
 
               output += "Complete " + name + " by " + date;
 
