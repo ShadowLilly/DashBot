@@ -1,5 +1,5 @@
 var initializer = require("./init.js");
-initializer.init();
+initializer.init(); 
 console.log("Global variables established, logging in");
 
 bot.login(token).catch(function(err) {
