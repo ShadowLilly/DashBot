@@ -362,7 +362,11 @@ function getCal(message) {
 
     else if(response.statusCode == 200) {
 
-         message.channel.send(convertICal(body));
+         var ICal = body;
+
+         var JSON = convertICal(body);
+
+         message.channel.send(JSON);
 
     }
 
@@ -393,6 +397,8 @@ function convertICal(source) {
       parentObj = {},
       lines = source.split("/n"),
       splitAt;
+
+  console.log(lines.length);
 
   let currentObj = output;
   let parents = [];
