@@ -395,7 +395,7 @@ function convertICal(source) {
       objectNames = [],
       output = {},
       parentObj = {},
-      lines = source.split("/n"),
+      lines = source.split("\n"),
       splitAt;
 
   console.log(lines.length);
