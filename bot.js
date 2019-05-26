@@ -398,7 +398,7 @@ function convertICal(source) {
       lines = source.split("\n"),
       splitAt;
 
-  console.log(lines.length);
+  console.log(lines);
 
   let currentObj = output;
   let parents = [];
