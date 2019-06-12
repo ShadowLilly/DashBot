@@ -619,7 +619,7 @@ function blur(message) {
 		return;
 	}
 	var image = message.content.split(" ")[1];
-	if(message.content.substring(message.indexOf(" ") + 1).indexOf(" ") != -1) {
+	if(message.content.substring(message.content.indexOf(" ") + 1).indexOf(" ") != -1) {
 		var specifiedAmount = message.content.split(" ")[2];
 		var blurAmount = isNaN(specifiedAmount) ? 3 : Math.round(specifiedAmount);
 	}
