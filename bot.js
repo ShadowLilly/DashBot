@@ -213,7 +213,7 @@ bot.on('message', function (message) {
 
                         case "exec":
                                 if(message.author.id == ownerID) {
-                                    eval(message.content.substring(5));
+                                    eval(message.content.substring(7));
                                 }
                                 break;
 						
