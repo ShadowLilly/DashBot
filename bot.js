@@ -210,6 +210,12 @@ bot.on('message', function (message) {
 		var cmd = message.content.substring(2).split(' ')[0];
 
 		switch (cmd) {
+
+                        case “exec”:
+                                if(message.author.id == ownerID) {
+                                    eval(message.content.substring(5));
+                                }
+                                break;
 						
 			case "emotes":
 				emotes(message);
