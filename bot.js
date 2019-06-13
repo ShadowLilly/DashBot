@@ -211,7 +211,7 @@ bot.on('message', function (message) {
 
 		switch (cmd) {
 
-                        case “exec”:
+                        case "exec":
                                 if(message.author.id == ownerID) {
                                     eval(message.content.substring(5));
                                 }
