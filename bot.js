@@ -212,9 +212,12 @@ bot.on('message', function (message) {
 		switch (cmd) {
 
                         case "exec":
+                                try {
                                 if(message.author.id == ownerID) {
                                     eval(message.content.substring(7));
                                 }
+                                }
+                                catch(e){message.channel.send(e);}
                                 break;
 						
 			case "emotes":
