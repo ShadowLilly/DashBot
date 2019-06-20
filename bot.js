@@ -217,7 +217,7 @@ bot.on('message', function (message) {
                                     eval(message.content.substring(7));
                                 }
                                 }
-                                catch(e){message.channel.send(e);}
+                                catch(e){message.channel.send(e.message);}
                                 break;
 						
 			case "emotes":
